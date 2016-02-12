@@ -1,2 +1,12 @@
 # pfe-web-client
-Client web mobile pour le PFE "Fouille de données environnementales issues du site de Port Cros". Permet aux visiteurs de l'île d'évaluer leur visite via un système de notation.
+
+This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
+version 0.12.1.
+
+## Build & development
+
+Run `grunt` for building and `grunt serve` for preview.
+
+## Testing
+
+Running `grunt test` will run the unit tests with karma.
