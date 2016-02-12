@@ -1,23 +1,41 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+<div class="container rating-form">
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+  <form class="user-input">
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+    <div class="form-group question">
+      <label for="sel1">Quelle est la raison de votre venue ?</label>
+      <select class="form-control" id="sel1">
+        <option>Farniente</option>
+        <option>Plage</option>
+        <option>Se mettre une grosse frappe</option>
+        <option>La réponse D</option>
+      </select>
+    </div>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+    <div class="question">
+      <label>Êtes-vous satisfait par la propreté de l'île ?</label>
+      <input id="rating-1" class="rating" data-min="0" data-max="5" data-step="1" data-size="sm">
+    </div>
+
+    <div class="question">
+      <label>Êtes-vous satisfait par la tranquilité de l'île ?</label>
+      <input id="rating-2" class="rating" data-min="0" data-max="5" data-step="1" data-size="sm">
+    </div>
+
+    <div class="question">
+      <label>Êtes-vous satisfait par les services de l'île ?</label>
+      <input id="rating-3" class="rating" data-min="0" data-max="5" data-step="1" data-size="sm">
+    </div>
+
+    <div class="question">
+      <label>Êtes-vous satisfait par la beauté de l'île ?</label>
+      <input id="rating-4" class="rating" data-min="0" data-max="5" data-step="1" data-size="sm">
+    </div>
+
+  </form>
+
+  <div id="submit">
+    <button class="btn btn-lg btn-success" ng-click="sendOpinion()">Envoyer mon avis</button>
+  </div>
+
 </div>

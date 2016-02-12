@@ -1,0 +1,44 @@
+.header {
+  text-align: center;
+  color: #777;
+  background-color: #eee;
+  border: none;
+  margin-top: 0px;
+  margin-bottom: 19px;
+  height: 60px;
+  line-height: 60px;
+}
+
+.header p {
+  margin: 0px;
+  padding: 0px;
+  font-size: 25px;
+}
+
+@media screen and (max-width:400px) {
+  .header p {
+    font-size: 20px;
+  }
+
+  .header {
+    height: 50px;
+    line-height: 50px;
+  }
+}
+
+@media screen and (max-width:350px) {
+  .header p {
+    font-size: 17px;
+  }
+
+  .header {
+    height: 40px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (min-width:500px) {
+  .header p {
+    font-size: 30px;
+  }
+}
