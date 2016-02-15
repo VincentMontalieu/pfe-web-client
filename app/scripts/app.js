@@ -9,13 +9,13 @@
  * Main module of the application.
  */
 angular
-  .module('pfeWebClientApp', [
+  .module('pfeWebClientApp', [   
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch' 
   ])
   .config(function ($routeProvider) {
     $routeProvider

@@ -25,7 +25,7 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
-  // Define the configuration for all the tasks
+  // Define the configuration for all the tasks 
   grunt.initConfig({
 
     // Project settings
@@ -55,7 +55,7 @@ module.exports = function (grunt) {
       gruntfile: {
         files: ['Gruntfile.js']
       },
-      livereload: {
+      livereload: {  
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
@@ -96,7 +96,7 @@ module.exports = function (grunt) {
       },
       test: {
         options: {
-          port: 9001,
+          port: 9001,         
           middleware: function (connect) {
             return [
               connect.static('.tmp'),
