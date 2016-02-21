@@ -11,7 +11,7 @@ angular.module('pfeWebClientApp')
       sendSurvey: function (json_to_send) {
         var deferred = $q.defer();
         $http.post(CONSTANTS.serverAddress + CONSTANTS.sendSurveyPath, json_to_send).then(function (data) {
-          if (data.data.status == 'success') {
+          if (data.data.status === 'success') {
             deferred.resolve(data.data.value);
           } else {
             deferred.reject(data.data.value);

@@ -18,12 +18,7 @@ angular.module('pfeWebClientApp')
     /*************** INIT *****************/
 
     var json_to_send;
-
-    var dialog = new BootstrapDialog({
-      type: BootstrapDialog.TYPE_WARNING,
-      title: 'Erreur',
-      message: 'Something went wrong...'
-    });
+    var dialog;
 
     $(".question input").rating({
       starCaptions: {1: "Pas satisfait", 2: "Peu satisfait", 3: "Satisfait", 4: "Très satisfait", 5: "J'ai pleuré"},
@@ -59,6 +54,10 @@ angular.module('pfeWebClientApp')
           title: 'Envoi terminé',
           message: data
         });
+
+        // Ouvre la pop-up
+        dialog.open();
+
       }, function (err) {
 
         // Envoi echoue
@@ -67,10 +66,10 @@ angular.module('pfeWebClientApp')
           title: 'Envoi échoué',
           message: err
         });
-      });
 
-      // Ouvre la pop-up
-      dialog.open();
-    }
+        // Ouvre la pop-up
+        dialog.open();
 
+      });      
+    };
   });
