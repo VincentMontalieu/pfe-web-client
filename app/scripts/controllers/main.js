@@ -45,6 +45,18 @@ angular.module('pfeWebClientApp')
 
       console.log(json_to_send);
 
+      if(json_to_send.proprete == 0 || json_to_send.tranquilite == 0 || json_to_send.services == 0 || json_to_send.beaute == 0) {
+        // Pas d'envoi si toutes les questions ne sont pas répondues
+        dialog = new BootstrapDialog({
+          type: BootstrapDialog.TYPE_WARNING,
+          title: 'Attention',
+          message: "Vous n'avez pas répondu à toutes les questions. Merci de réessayer."
+        });
+
+        // Ouvre la pop-up
+        dialog.open();
+      }
+
       // Appel a la factory pour l'envoi au serveur via requete HTTP
       SurveyFactory.sendSurvey(json_to_send).then(function (data) {
 
@@ -60,8 +72,11 @@ angular.module('pfeWebClientApp')
 
       }, function (err) {
 
-        // Envoi echoue
-        dialog = new BootstrapDialog({
+        // Si err est juste un message, alors c'est une erreur envoyée par le serveur
+        if(typeof err.data === 'undefined') {
+
+          // Envoi echoue
+          dialog = new BootstrapDialog({
           type: BootstrapDialog.TYPE_DANGER,
           title: 'Envoi échoué',
           message: err
@@ -69,6 +84,22 @@ angular.module('pfeWebClientApp')
 
         // Ouvre la pop-up
         dialog.open();
+        }
+
+        // Si err contient un champ data = null, alors c'est une erreur envoyée par HTTP car le serveur est down
+        else {
+
+          // Le serveur ne répond pas
+          dialog = new BootstrapDialog({
+          type: BootstrapDialog.TYPE_DANGER,
+          title: 'Erreur serveur',
+          message: 'Il semble que le serveur ne répond pas :('
+        });
+
+        // Ouvre la pop-up
+        dialog.open();
+
+        }
 
       });      
     };
