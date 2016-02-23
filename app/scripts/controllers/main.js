@@ -93,8 +93,8 @@ angular.module('pfeWebClientApp')
             // Le serveur ne répond pas
             dialog = new BootstrapDialog({
               type: BootstrapDialog.TYPE_DANGER,
-              title: 'Erreur serveur',
-              message: 'Il semble que le serveur ne répond pas :('
+              title: 'Envoi échoué',
+              message: 'Le serveur ne répond pas :('
             });
 
             // Ouvre la pop-up
