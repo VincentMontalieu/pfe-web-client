@@ -20,12 +20,22 @@ angular.module('pfeWebClientApp')
     var json_to_send;
     var dialog;
 
-    $(".question input").rating({
-      starCaptions: {1: "Pas satisfait", 2: "Peu satisfait", 3: "Satisfait", 4: "Très satisfait", 5: "J'ai pleuré"},
-      starCaptionClasses: {1: "text-danger", 2: "text-warning", 3: "text-info", 4: "text-primary", 5: "text-success"},
+    $(".question_satisfait input").rating({
+      starCaptions: {1: "Pas satisfait", 2: "Peu satisfait", 3: "Satisfait", 4: "Très satisfait"},
+      starCaptionClasses: {1: "text-danger", 2: "text-warning", 3: "text-info", 4: "text-success"},
       clearCaption: '',
       defaultCaption: '',
-      clearButton: ''
+      clearButton: '',
+      stars: 4
+    });
+
+    $(".question_derangeant input").rating({
+      starCaptions: {1: "Très dérangeant", 2: "Dérangeant", 3: "Peu dérangeant", 4: "Pas dérangeant"},
+      starCaptionClasses: {1: "text-danger", 2: "text-warning", 3: "text-info", 4: "text-success"},
+      clearCaption: '',
+      defaultCaption: '',
+      clearButton: '',
+      stars: 4
     });
 
 
@@ -35,16 +45,19 @@ angular.module('pfeWebClientApp')
 
       // On construit le JSON a envoyer
       json_to_send = {
-        venue: $("#raison_venue").val(),
-        proprete: $("#proprete_ile").val(),
-        tranquilite: $("#tranquilite_ile").val(),
-        services: $("#services_ile").val(),
-        beaute: $("#beaute_ile").val()
+        categorie: $("#categorie_visiteur").val(),
+        visite: $("#visite").val(),
+        accueil: $("#accueil").val(),
+        information: $("#info").val(),
+        preservation: $("#preservation").val(),
+        reglementation: $("#reglementation").val(),
+        frequentation: $("#frequentation").val()
       };
 
       console.log(json_to_send);
 
-      if (json_to_send.proprete == 0 || json_to_send.tranquilite == 0 || json_to_send.services == 0 || json_to_send.beaute == 0) {
+      if (json_to_send.visite == 0 || json_to_send.accueil == 0 || json_to_send.information == 0
+        || json_to_send.preservation == 0 || json_to_send.reglementation == 0 || json_to_send.frequentation == 0) {
         // Pas d'envoi si toutes les questions ne sont pas répondues
         dialog = new BootstrapDialog({
           type: BootstrapDialog.TYPE_WARNING,

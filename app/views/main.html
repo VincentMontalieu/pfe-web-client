@@ -3,33 +3,41 @@
   <form class="user-input" ng-model="myForm">
 
     <div class="form-group question">
-      <label for="raison_venue">Quelle est la raison de votre venue ?</label>
-      <select class="form-control" id="raison_venue">
-        <option>Farniente</option>
-        <option>Plage</option>
-        <option>Se mettre une grosse frappe</option>
-        <option>La réponse D</option>
+      <label for="categorie_visiteur">Vous êtes un</label>
+      <select class="form-control" id="categorie_visiteur">
+        <option>Piéton / Cycliste</option>
+        <option>Plaisancier</option>
       </select>
     </div>
 
-    <div class="question">
-      <label for="proprete_ile">Êtes-vous satisfait par la propreté de l'île ?</label>
-      <input id="proprete_ile" class="rating" data-min="0" data-max="5" data-step="1" data-size="sm">
+    <div class="question question_satisfait">
+      <label for="visite">Êtes-vous satisfait(e) de votre visite ?</label>
+      <input id="visite" class="rating" data-min="0" data-max="4" data-step="1" data-size="sm">
     </div>
 
-    <div class="question">
-      <label for="tranquilite_ile">Êtes-vous satisfait par la tranquilité de l'île ?</label>
-      <input id="tranquilite_ile" class="rating" data-min="0" data-max="5" data-step="1" data-size="sm">
+    <div class="question question_satisfait">
+      <label for="accueil">Êtes-vous satisfait(e) de l'accueil offert sur l'île ?</label>
+      <input id="accueil" class="rating" data-min="0" data-max="4" data-step="1" data-size="sm">
     </div>
 
-    <div class="question">
-      <label for="services_ile">Êtes-vous satisfait par les services de l'île ?</label>
-      <input id="services_ile" class="rating" data-min="0" data-max="5" data-step="1" data-size="sm">
+    <div class="question question_satisfait">
+      <label for="info">Êtes-vous satisfait(e) des informations disponibles sur l'île ?</label>
+      <input id="info" class="rating" data-min="0" data-max="4" data-step="1" data-size="sm">
     </div>
 
-    <div class="question">
-      <label for="beaute_ile">Êtes-vous satisfait par la beauté de l'île ?</label>
-      <input id="beaute_ile" class="rating" data-min="0" data-max="5" data-step="1" data-size="sm">
+    <div class="question question_satisfait">
+      <label for="preservation">Êtes-vous satisfait(e) par la préservation de l'île ?</label>
+      <input id="preservation" class="rating" data-min="0" data-max="4" data-step="1" data-size="sm">
+    </div>
+
+    <div class="question question_satisfait">
+      <label for="reglementation">Êtes-vous satisfait(e) par la réglementation de l'île ?</label>
+      <input id="reglementation" class="rating" data-min="0" data-max="4" data-step="1" data-size="sm">
+    </div>
+
+    <div class="question question_derangeant">
+      <label for="frequentation">Avez-vous trouvé dérangeant le nombre de personnes sur l'île ?</label>
+      <input id="frequentation" class="rating" data-min="0" data-max="4" data-step="1" data-size="sm">
     </div>
 
   </form>
